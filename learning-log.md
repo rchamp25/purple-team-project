@@ -30,8 +30,33 @@ Part 1:
         Note: Hardware-level security uses physical hardware and hypervisors to completely isolate entire operating systems. Process-level security relies on software boundaries within a single operating system to isolate individual applications. 
 
         The reason we are using hardware-level security for this lab is the same as why most purple-team professionals use it as well, that is, because running live malware in a container can breakout and allow the malware to infect the host machine, and then move to the network as well. For safety, we use VMs.
-        
+
     Step 8:
+
+        We set up the Virtual Machine using VirtualBox. 
+        Note: VirtualBox creates a virtual network switch which gives the PC a virtual adapter on it. The VM's attach to this swtich and a DHCP server hands each one an address. They can talk to each other and the PC, but there is no gateway to the internet or home network, so traffic cannot go in nor out. 
+
+        DHCP: 
+
+        Host-only:
+
+        Why we use Host only vs NAT:
+
+    Step 9
+
+        Setting up Kali inside of VirtualBox.
+
+Oct 6:
+
+    Prior to setting up step 10 I've decided to make a change in scope. My memory was very tight during the initial test of Kali's setup prior to even setting up the Wazuh dashboard. I mapped out memory usage and while Docker and Kali could fit, Wazuh could not. Steps 1-9 are complete and for now I'm going to take a break from step 10 and potentially refactor the project in the future. 
+
+    Wazuh was intended to be the defensive dashboard that we used in this lab so without it the idea of "purple-teaming" isn't the same.
+
+    I installed the 7-Zip extracter to get the .vdi and .vbox files from the Kali Linux download. Fortunately I didn't have to end up using it as the Kali download was in a .zip. 
+
+    Upon the installation for 7-Zip and Kali I ran a filehash comparison to the published values to confirm that the downloads were pure and untouched. This comparison yielded true confirming that the files were safe.  
+
+        
 
 
 
